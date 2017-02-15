@@ -31,7 +31,9 @@ setup(
     license='MIT',
     py_modules=['nose_faulthandler'],
     zip_safe=False,
-    install_requires=['faulthandler'],
+    extras_require={
+        ":python_version<'3.3'": ['faulthandler'],
+    },
     entry_points={
         'nose.plugins': [
             'nose_faulthandler = nose_faulthandler:FaultHandler',
